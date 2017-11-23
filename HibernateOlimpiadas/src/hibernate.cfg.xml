@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?> 
+<!DOCTYPE hibernate-configuration PUBLIC  
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Configuración de conexión a la base de datos siendo teléfonos el nombre 
+			de la base de datos que debe estar creada previamente -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost/bd_olimpiadas</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">theking</property>
+			<property name="connection.pool_size">1</property>
+			<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+			<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+			<property name="show_sql">true</property>
+			<property name="hbm2ddl.auto">create</property>
+			
+			<mapping class="aed.hibernate_olimpiadas.tablas.Deportistas" />
+			<mapping class="aed.hibernate_olimpiadas.tablas.Medallas" />
+			<mapping class="aed.hibernate_olimpiadas.tablas.Pruebas" /> 
+			
+	</session-factory>
+</hibernate-configuration> 
