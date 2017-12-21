@@ -1,1 +1,2 @@
 https://www.mkyong.com/java/how-to-create-xml-file-in-java-jdom-parser/
+https://blogdeaitor.wordpress.com/2012/10/18/xml_java/
