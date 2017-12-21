@@ -1,0 +1,19 @@
+<IESMinik>
+	<Alumnos>
+		<alumno curso="1" ciclo="Desarrollo">
+			<nombre>Pepito Perez</nombre>
+			<telefono tipo="fijo">922454545</telefono>
+			<poblacion>LaLaguna</poblacion>
+		</alumno>
+		<alumno curso="1" ciclo="Desarrollo">
+			<nombre>Luisa Lopez</nombre>
+			<telefono tipo="movil">636332255</telefono>
+			<poblacion>LaLaguna</poblacion>
+		</alumno>
+		<alumno curso="2" ciclo="Sistemas">
+			<nombre>Juana Suarez</nombre>
+			<telefono tipo="fijo">922556699</telefono>
+			<poblacion>Santa Cruz de Tenerife</poblacion>
+		</alumno>
+	</Alumnos>
+</IESMinik>
