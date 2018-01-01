@@ -36,4 +36,8 @@
 <fullyQualifiedTypeName name="aed.hibernate_olimpiadas.tablas.Deportistas"/>
 <fullyQualifiedTypeName name="javax.management.Query"/>
 <fullyQualifiedTypeName name="javax.persistence.Query"/>
+<fullyQualifiedTypeName name="javafx.fxml.FXMLLoader"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.VBox"/>
+<fullyQualifiedTypeName name="aed.proyectoderby.controllers.ControllerViewMain"/>
+<fullyQualifiedTypeName name="javafx.scene.Scene"/>
 </qualifiedTypeNameHistroy>
