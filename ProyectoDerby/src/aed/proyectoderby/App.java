@@ -17,7 +17,7 @@ public class App extends Application {
 		
 		primaryStage.setTitle("Proyecto Derby");
 		primaryStage.setScene(new Scene(control.getView()));
-		primaryStage.show();	
+		primaryStage.show();
 		
 	}
 
