@@ -6,9 +6,12 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import aed.proyectoderby.models.Conexion;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -99,19 +102,35 @@ public class ControllerViewMain implements Initializable {
 	
 	public void tabla() {
 		try {
-			System.out.println("preparando tabla");
+			
+			//		Consulta
 			Statement orden = conex2.createStatement();
 			ResultSet resul = orden.executeQuery("SELECT * FROM Usuarios");
-			int tamanioTabla = resul.getMetaData().getColumnCount();
+			
+			int totalColumnas = resul.getMetaData().getColumnCount();
+			System.out.println("Limpiando tabla");
+			tableView.getColumns().clear();
+			
+			
+			
+			System.out.println("Añadiendo columnas");
+			
+			for (int i = 1; i <= totalColumnas; i++) {
+				
+				String nombreColumna = resul.getMetaData().getColumnName(i);
+				
+				TableColumn<Object, String> tab = new TableColumn<>(nombreColumna);
+				tableView.getColumns().add(tab);
+				
+			}
+			ObservableList<ArrayList<String>> datosTabla = FXCollections.observableArrayList();
+			
 			while (resul.next()) {
-				for (int i = 1; i <= tamanioTabla; i++) {
-					
-					String nombreColumna = resul.getMetaData().getColumnName(i);
-					
-					TableColumn<String, String> tab = new TableColumn<>(nombreColumna);
-					
-					System.out.println(resul.getMetaData().getColumnName(i)+resul.getString(i));
+				ArrayList<String> temporal = new ArrayList<>();
+				for (int i = 0; i < totalColumnas; i++) {
+					temporal.add(resul.getString(i));
 				}
+				datosTabla.add(temporal);
 			}
 		} catch (SQLException e) {
 			System.out.println("Error-leer_a_tabla: "+e);
